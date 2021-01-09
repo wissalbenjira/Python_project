@@ -5,172 +5,107 @@
     <link rel="stylesheet" type="text/css" />
     <title>API</title>
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: #eceffc;
+            background: rgb(30, 30, 40);
         }
 
-        .btn {
-            padding: 8px 20px;
-            border-radius: 0;
-            overflow: hidden;
+        form {
+            max-width: 420px;
+            margin: 50px auto;
         }
 
-        ::before {
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
+        .feedback-input {
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            border-radius: 5px;
+            line-height: 22px;
+            background-color: transparent;
+            border: 2px solid #CC6666;
+            transition: all 0.3s;
+            padding: 13px;
+            margin-bottom: 15px;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg,
-                    transparent,
-                    var(--primary-color),
-                    transparent);
-            transform: translateX(-100%);
-            transition: 0.6s;
-        }
-
-        :hover {
-            background: transparent;
-            box-shadow: 0 0 20px 10px hsla(204, 70%, 53%, 0.5);
-        }
-
-        ::before {
-            transform: translateX(100%);
-        }
-
-        .form-input-material {
-            --input-default-border-color: white;
-            --input-border-bottom-color: white;
-        }
-        input {
-            color: white;
-        }
-        
-
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 40px;
-            color: white;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
-                0 1px 1px rgba(128, 128, 128, 0.155),
-                0 2.1px 2.1px rgba(128, 128, 128, 0.195),
-                0 4.4px 4.4px rgba(128, 128, 128, 0.241),
-                0 12px 12px rgba(128, 128, 128, 0.35)   
+            box-sizing: border-box;
+            outline: 0;
         }
         h1 {
-            margin: 0 0 24px 0;
+            color: #CC6666;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            font-size: 30px;
+            border-radius: 5px;
+            line-height: 22px;
+            max-width: 420px;
+            margin: 50px auto;
+        }
+        h2 {
+            color: #CC6666;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            border-radius: 5px;
+            line-height: 22px;
+            max-width: 420px;
+            margin: 20px auto;
+        }
+        .feedback-input:focus {
+            border: 2px solid #CC4949;
         }
 
-        .form-input-material {
-            margin: 12px 0;
+        textarea {
+            height: 150px;
+            line-height: 150%;
+            resize: vertical;
         }
-        .btn {
+
+        [type="submit"] {
+            font-family: 'Montserrat', Arial, Helvetica, sans-serif;
             width: 100%;
-            margin: 18px 0 9px 0;
+            background: #CC6666;
+            border-radius: 5px;
+            border: 0;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            transition: all 0.3s;
+            margin-top: -4px;
+            font-weight: 700;
         }
-        
+
+        [type="submit"]:hover {
+            background: #CC4949;
+        }
     </style>
 </head>
 
 <body>
-    <form class="info" action="javascript:void(0);">
-        <h1>Input Data</h1>
-        <div class="form-input-material">
-            <input type="text" name="Administrative" id="Administrative" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="Administrative">Administrative</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="Administrative_Duration" id="Administrative_Duration" placeholder=" "
-                autocomplete="off" class="form-control-material" required />
-            <label for="Administrative_Duration">Administrative_Duration</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="Informational" id="Informational" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="Informational">Informational</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="Informational_Duration" id="Informational_Duration" placeholder=" "
-                autocomplete="off" class="form-control-material" required />
-            <label for="Informational_Duration">Informational_Duration</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="ProductRelated" id="ProductRelated" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="ProductRelated">ProductRelated</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="ProductRelated_Duration" id="ProductRelated_Duration" placeholder=" "
-                autocomplete="off" class="form-control-material" required />
-            <label for="ProductRelated_Duration">ProductRelated_Duration</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="BounceRates" id="BounceRates" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="BounceRates">BounceRates</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="ExitRates" id="ExitRates" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="ExitRates">ExitRates</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="PageValues" id="PageValues" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="PageValues">PageValues</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="SpecialDay" id="SpecialDay" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="SpecialDay">SpecialDay</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="Month" id="Month" placeholder=" " autocomplete="off" class="form-control-material"
-                required />
-            <label for="Month">Month</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="OperatingSystems" id="OperatingSystems" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="OperatingSystems">OperatingSystems</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="Browser" id="Browser" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="Browser">Browser</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="Region" id="Region" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="Region">Region</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="TrafficType" id="TrafficType" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="TrafficType">TrafficType</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="VisitorType" id="VisitorType" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="VisitorType">VisitorType</label>
-        </div>
-        <div class="form-input-material">
-            <input type="text" name="Weekend" id="Weekend" placeholder=" " autocomplete="off"
-                class="form-control-material" required />
-            <label for="Weekend">Weekend</label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-ghost">Prediction</button>
-    </form>
+        <h1 font-weight="bold">Online Shopping Prediction</h1>
+        <form action="/site/" method="POST">
+            <input name="Administrative" type="text" class="feedback-input" placeholder="Administrative (int)" />
+            <input name="Administrative_Duration" type="text" class="feedback-input" placeholder="Administrative_Duration (float)" />
+            <input name="Informational" type="text" class="feedback-input" placeholder="Informational (int)" />
+            <input name="Informational_Duration" type="text" class="feedback-input" placeholder="Informational_Duration (float)" />
+            <input name="ProductRelated" type="text" class="feedback-input" placeholder="ProductRelated (int)" />
+            <input name="ProductRelated_Duration" type="text" class="feedback-input" placeholder="ProductRelated_Duration (float)" />
+            <input name="BounceRates" type="text" class="feedback-input" placeholder="BounceRates (float)" />
+            <input name="ExitRates" type="text" class="feedback-input" placeholder="ExitRates (float)" />
+            <input name="PageValues" type="text" class="feedback-input" placeholder="PageValues (float)" />
+            <input name="SpecialDay" type="text" class="feedback-input" placeholder="SpecialDay (float)" />
+            <input name="Month" type="text" class="feedback-input" placeholder="Month (int)" />
+            <input name="OperatingSystems" type="text" class="feedback-input" placeholder="OperatingSystems (int)" />
+            <input name="Browser" type="text" class="feedback-input" placeholder="Browser (int)" />
+            <input name="Region" type="text" class="feedback-input" placeholder="Region (int)" />
+            <input name="TrafficType" type="text" class="feedback-input" placeholder="TrafficType (int)" />
+            <input name="VisitorType" type="text" class="feedback-input" placeholder="VisitorType (new: 1, returning: 2, other: 3)" />
+            <input name="Weekend" type="text" class="feedback-input" placeholder="Weekend (Weekend: 1, else: 0)" />
+            <input type="submit" value="SUBMIT"/>
+        </form>
+        <h2 font-weight="bold">BENJIRA Wissal & BOULEKBACHE Lina</h2>
 </body>
-
 </html>
