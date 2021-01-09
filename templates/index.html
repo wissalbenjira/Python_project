@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" />
+    <title>API</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #eceffc;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        ::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    var(--primary-color),
+                    transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        :hover {
+            background: transparent;
+            box-shadow: 0 0 20px 10px hsla(204, 70%, 53%, 0.5);
+        }
+
+        ::before {
+            transform: translateX(100%);
+        }
+
+        .form-input-material {
+            --input-default-border-color: white;
+            --input-border-bottom-color: white;
+        }
+        input {
+            color: white;
+        }
+        
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 40px;
+            color: white;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+                0 1px 1px rgba(128, 128, 128, 0.155),
+                0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+                0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+                0 12px 12px rgba(128, 128, 128, 0.35)   
+        }
+        h1 {
+            margin: 0 0 24px 0;
+        }
+
+        .form-input-material {
+            margin: 12px 0;
+        }
+        .btn {
+            width: 100%;
+            margin: 18px 0 9px 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form class="info" action="javascript:void(0);">
+        <h1>Input Data</h1>
+        <div class="form-input-material">
+            <input type="text" name="Administrative" id="Administrative" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="Administrative">Administrative</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="Administrative_Duration" id="Administrative_Duration" placeholder=" "
+                autocomplete="off" class="form-control-material" required />
+            <label for="Administrative_Duration">Administrative_Duration</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="Informational" id="Informational" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="Informational">Informational</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="Informational_Duration" id="Informational_Duration" placeholder=" "
+                autocomplete="off" class="form-control-material" required />
+            <label for="Informational_Duration">Informational_Duration</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="ProductRelated" id="ProductRelated" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="ProductRelated">ProductRelated</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="ProductRelated_Duration" id="ProductRelated_Duration" placeholder=" "
+                autocomplete="off" class="form-control-material" required />
+            <label for="ProductRelated_Duration">ProductRelated_Duration</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="BounceRates" id="BounceRates" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="BounceRates">BounceRates</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="ExitRates" id="ExitRates" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="ExitRates">ExitRates</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="PageValues" id="PageValues" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="PageValues">PageValues</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="SpecialDay" id="SpecialDay" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="SpecialDay">SpecialDay</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="Month" id="Month" placeholder=" " autocomplete="off" class="form-control-material"
+                required />
+            <label for="Month">Month</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="OperatingSystems" id="OperatingSystems" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="OperatingSystems">OperatingSystems</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="Browser" id="Browser" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="Browser">Browser</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="Region" id="Region" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="Region">Region</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="TrafficType" id="TrafficType" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="TrafficType">TrafficType</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="VisitorType" id="VisitorType" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="VisitorType">VisitorType</label>
+        </div>
+        <div class="form-input-material">
+            <input type="text" name="Weekend" id="Weekend" placeholder=" " autocomplete="off"
+                class="form-control-material" required />
+            <label for="Weekend">Weekend</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-ghost">Prediction</button>
+    </form>
+</body>
+
+</html>
