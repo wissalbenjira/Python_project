@@ -33,6 +33,12 @@ def form_online_shoppers():
     Weekend = int(request.form['Weekend'])
     data = [[Administrative,Administrative_Duration,Informational,Informational_Duration,ProductRelated,ProductRelated_Duration,BounceRates,ExitRates,PageValues,SpecialDay,Month,OperatingSystems,Browser,Region,TrafficType,VisitorType,Weekend]]
     prediction = np.array2string(model.predict(data))
+    if prediction == '[0.]':
+        prediction = "The visitor is not going to purchase."
+    else:
+        prediction = "The visitor is going to purchase."
+
+
     return render_template("result.html",resultat= prediction)
 
 
@@ -40,6 +46,10 @@ def form_online_shoppers():
 def local():
     data = request.get_json()
     prediction = np.array2string(model.predict(data))
+    if prediction == '[0.]':
+        prediction = "The visitor is not going to purchase."
+    else:
+        prediction = "The visitor is going to purchase."
     return jsonify(prediction)
 
 if __name__ == '__main__':
