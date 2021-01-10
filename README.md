@@ -23,4 +23,20 @@ L'API qui regroupe les fichiers d'exécution "app.py" et "request.py", le modèl
 
 # 3. Guide du code
 
-Lors de l'ouverture du Jupyter Notebook, il n'est pas nécessaire de lancer les cellules. Certaines parties (notamment la Grid Search et xgboost) prennent beaucoup de temps à
+Le code est divisé en plusieurs étapes:
+Data Visualisation
+Data Exploration
+Test de modèles manuellement
+Grid Search
+Test automatisés (xgboost)
+Sélection du modèle final
+
+# 4. Guide de l'API
+
+Il est possible de lancer la prédiction: 
+- en console (lancement d'app.py puis du request.py), la prédiction se fait sur [0,0,0,0,1,0,0.2,0.2,0,0,2,1,1,1,1,2,0] -> retourne 0 (pas d'achat pour ce client).
+- sur l'API Flask (lancement d'app.py qui fait appel aux templates), la prédiction se fait selon l'utilisateur.
+
+# 5. Conclusion
+
+Après de nombreux modèles test, le Gradient Boosting Classifier est le plus performant avec une précision de 90%.
